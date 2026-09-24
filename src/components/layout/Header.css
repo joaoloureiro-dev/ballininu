@@ -1,0 +1,141 @@
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+
+    width: 100%;
+
+    padding:
+        var(--space-4) var(--page-padding);
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-4);
+
+    width: min(100%, var(--page-max-width));
+
+    margin-inline: auto;
+}
+
+.site-header__brand {
+    display: inline-flex;
+    align-items: center;
+
+    gap: var(--space-3);
+
+    min-width: 0;
+
+    text-decoration: none;
+}
+
+.site-header__logo {
+    width: 2.6rem;
+    height: 2.6rem;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(240, 202, 103, 0.5);
+}
+
+.site-header__brand span {
+    display: none;
+
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+
+    color: var(--color-white);
+
+    letter-spacing: 0.16em;
+}
+
+.site-header__nav {
+    display: none;
+}
+
+.site-header__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 2.6rem;
+
+    padding:
+        var(--space-2) var(--space-5);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+
+    color: var(--color-black);
+    background: var(--color-gold-light);
+
+    border:
+        1px solid var(--color-gold-light);
+
+    border-radius: 999px;
+
+    letter-spacing: 0.12em;
+
+    transition:
+        background-color var(--duration-fast) var(--ease-standard),
+        border-color var(--duration-fast) var(--ease-standard);
+}
+
+.site-header__cta:hover {
+    background: var(--color-white);
+
+    border-color: var(--color-white);
+}
+
+@media (min-width: 768px) {
+    .site-header {
+        padding-top: var(--space-5);
+    }
+
+    .site-header__brand span {
+        display: inline;
+    }
+
+    .site-header__nav {
+        display: flex;
+        align-items: center;
+
+        gap: var(--space-6);
+    }
+
+    .site-header__nav a {
+        position: relative;
+
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-weight-medium);
+
+        color: rgba(255, 255, 255, 0.74);
+
+        letter-spacing: 0.12em;
+
+        transition:
+            color var(--duration-fast) var(--ease-standard);
+    }
+
+    .site-header__nav a:hover {
+        color: var(--color-white);
+    }
+}
+
+@media (min-width: 1024px) {
+    .site-header {
+        padding-top: var(--space-6);
+    }
+
+    .site-header__nav {
+        gap: var(--space-8);
+    }
+}
