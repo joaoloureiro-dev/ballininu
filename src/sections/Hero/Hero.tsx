@@ -19,29 +19,31 @@ function Hero() {
             aria-labelledby="hero-title"
         >
             <div className="hero__frame">
-                <div className="hero__background">
+                <div className="hero__media">
                     <img
                         src="/images/ballininu-banner.png"
-                        alt=""
-                        aria-hidden="true"
+                        alt="BALLININU"
                     />
                 </div>
 
-                <div className="hero__overlay" />
+                <div
+                    className="hero__desktop-overlay"
+                    aria-hidden="true"
+                />
 
                 <div className="hero__inner">
                     <motion.div
                         className="hero__content"
                         initial={{
                             opacity: 0,
-                            y: 22,
+                            y: 18,
                         }}
                         animate={{
                             opacity: 1,
                             y: 0,
                         }}
                         transition={{
-                            duration: 0.8,
+                            duration: 0.7,
                             ease: [
                                 0.22,
                                 1,
@@ -66,15 +68,12 @@ function Hero() {
                         </h1>
 
                         <p className="hero__tagline">
-                            {
-                                siteConfig.tagline
-                            }
+                            {siteConfig.tagline}
                         </p>
 
                         <p className="hero__description">
-                            Luxury, culture and
-                            community built around
-                            one iconic lifestyle.
+                            Luxury, culture and community
+                            built around one iconic lifestyle.
                         </p>
 
                         <div className="hero__actions">
@@ -82,14 +81,12 @@ function Hero() {
                                 className="hero__primary"
                                 href={buyHref}
                                 target={
-                                    siteConfig.links
-                                        .buy
+                                    siteConfig.links.buy
                                         ? '_blank'
                                         : undefined
                                 }
                                 rel={
-                                    siteConfig.links
-                                        .buy
+                                    siteConfig.links.buy
                                         ? 'noopener noreferrer'
                                         : undefined
                                 }
@@ -99,23 +96,19 @@ function Hero() {
 
                             <a
                                 className="hero__secondary"
-                                href={
-                                    communityHref
-                                }
+                                href={communityHref}
                                 target={
-                                    siteConfig.links
-                                        .telegram
+                                    siteConfig.links.telegram
                                         ? '_blank'
                                         : undefined
                                 }
                                 rel={
-                                    siteConfig.links
-                                        .telegram
+                                    siteConfig.links.telegram
                                         ? 'noopener noreferrer'
                                         : undefined
                                 }
                             >
-                                JOIN COMMUNITY
+                                COMMUNITY
                             </a>
                         </div>
                     </motion.div>
@@ -129,7 +122,7 @@ function Hero() {
                             opacity: 1,
                         }}
                         transition={{
-                            delay: 0.4,
+                            delay: 0.3,
                             duration: 0.7,
                         }}
                     >

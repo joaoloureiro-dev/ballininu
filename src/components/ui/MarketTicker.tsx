@@ -172,7 +172,7 @@ function MarketTicker() {
 
             return [
                 {
-                    label: 'BALLININU',
+                    label: 'TOKEN',
                     value: '$BALLININU',
                 },
                 {
@@ -217,79 +217,89 @@ function MarketTicker() {
         }, [pair])
 
     /*
-     * Four identical groups.
-     * Moving -25% gives us one
-     * complete seamless cycle.
+     * Cada set contém várias cópias
+     * dos dados para garantir que é
+     * sempre mais largo que o viewport.
      */
-    const groups = [0, 1, 2, 3]
+    const repeatedItems =
+        Array.from(
+            {
+                length: 6,
+            },
+            () => tickerItems,
+        ).flat()
+
+    function renderTickerSet(
+        setId: number,
+    ) {
+        return (
+            <div
+                className="market-ticker__set"
+                aria-hidden={
+                    setId === 1
+                        ? undefined
+                        : true
+                }
+            >
+                {repeatedItems.map(
+                    (item, index) => (
+                        <div
+                            className="market-ticker__item"
+                            key={`${setId}-${item.label}-${index}`}
+                        >
+                            <span className="market-ticker__label">
+                                {item.label}
+                            </span>
+
+                            <strong
+                                className={[
+                                    'market-ticker__value',
+
+                                    item.variant
+                                        ? `market-ticker__value--${item.variant}`
+                                        : '',
+                                ]
+                                    .filter(
+                                        Boolean,
+                                    )
+                                    .join(' ')}
+                            >
+                                {item.value}
+                            </strong>
+
+                            <span
+                                className="market-ticker__dot"
+                                aria-hidden="true"
+                            />
+                        </div>
+                    ),
+                )}
+            </div>
+        )
+    }
 
     return (
         <div
             className="market-ticker"
             aria-label="BALLININU live market data"
         >
-            <div className="market-ticker__fade market-ticker__fade--left" />
+            <div
+                className="market-ticker__fade market-ticker__fade--left"
+                aria-hidden="true"
+            />
 
             <div className="market-ticker__viewport">
                 <div className="market-ticker__track">
-                    {groups.map(
-                        (group) => (
-                            <div
-                                className="market-ticker__group"
-                                key={group}
-                                aria-hidden={
-                                    group !== 0
-                                }
-                            >
-                                {tickerItems.map(
-                                    (
-                                        item,
-                                        index,
-                                    ) => (
-                                        <div
-                                            className="market-ticker__item"
-                                            key={`${group}-${item.label}-${index}`}
-                                        >
-                                            <span className="market-ticker__label">
-                                                {
-                                                    item.label
-                                                }
-                                            </span>
+                    {renderTickerSet(1)}
 
-                                            <strong
-                                                className={[
-                                                    'market-ticker__value',
-
-                                                    item.variant
-                                                        ? `market-ticker__value--${item.variant}`
-                                                        : '',
-                                                ]
-                                                    .filter(
-                                                        Boolean,
-                                                    )
-                                                    .join(
-                                                        ' ',
-                                                    )}
-                                            >
-                                                {
-                                                    item.value
-                                                }
-                                            </strong>
-
-                                            <span
-                                                className="market-ticker__dot"
-                                                aria-hidden="true"
-                                            />
-                                        </div>
-                                    ),
-                                )}
-                            </div>
-                        ),
-                    )}
+                    {renderTickerSet(2)}
                 </div>
             </div>
 
-            <div className="market-ticker__fade market-ticker__fade--right" />
+            <div
+                className="market-ticker__fade market-ticker__fade--right"
+                aria-hidden="true"
+            />
         </div>
     )
 }
