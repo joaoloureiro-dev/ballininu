@@ -1,0 +1,204 @@
+.site-footer {
+    width: 100%;
+
+    margin: 0;
+
+    background:
+        var(--color-black);
+}
+
+.site-footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap:
+        var(--space-8);
+
+    width: 100%;
+
+    padding:
+        var(--space-10) var(--page-padding) var(--space-6);
+}
+
+/* ========================================
+   BRAND
+   ======================================== */
+
+.site-footer__brand {
+    display: flex;
+    align-items: center;
+
+    gap:
+        var(--space-4);
+
+    text-align: left;
+}
+
+.site-footer__logo {
+    flex-shrink: 0;
+
+    width: 3rem;
+    height: 3rem;
+
+    object-fit: cover;
+
+    border:
+        1px solid rgba(240, 202, 103, 0.28);
+
+    border-radius: 50%;
+}
+
+.site-footer__brand>div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.25rem;
+}
+
+.site-footer__brand strong {
+    font-family:
+        var(--font-family-base);
+
+    font-size:
+        var(--font-size-sm);
+
+    font-weight:
+        var(--font-weight-semibold);
+
+    color:
+        var(--color-white);
+
+    letter-spacing: 0.14em;
+}
+
+.site-footer__brand span {
+    font-family:
+        var(--font-family-display);
+
+    font-size:
+        var(--font-size-base);
+
+    font-style: italic;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+}
+
+/* ========================================
+   SOCIAL ICONS
+   ======================================== */
+
+.site-footer__socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap:
+        var(--space-3);
+}
+
+.site-footer__socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.9rem;
+    height: 2.9rem;
+
+    color:
+        var(--color-white);
+
+    background:
+        transparent;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 50%;
+
+    transition:
+        color var(--duration-fast) var(--ease-standard),
+        background-color var(--duration-fast) var(--ease-standard),
+        border-color var(--duration-fast) var(--ease-standard),
+        transform var(--duration-fast) var(--ease-standard);
+}
+
+.site-footer__socials svg {
+    width: 1rem;
+    height: 1rem;
+
+    flex-shrink: 0;
+}
+
+.site-footer__social--disabled {
+    opacity: 0.35;
+
+    cursor: default;
+}
+
+/* ========================================
+   COPYRIGHT
+   ======================================== */
+
+.site-footer__copyright {
+    font-size: 0.625rem;
+    font-weight:
+        var(--font-weight-medium);
+
+    color:
+        rgba(255, 255, 255, 0.34);
+
+    letter-spacing: 0.12em;
+}
+
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (min-width: 768px) {
+    .site-footer__inner {
+        flex-direction: row;
+        justify-content: space-between;
+
+        gap:
+            var(--space-8);
+
+        padding:
+            var(--space-8) var(--page-padding);
+    }
+
+    .site-footer__brand span {
+        font-size:
+            var(--font-size-lg);
+    }
+
+    .site-footer__copyright {
+        order: 3;
+    }
+}
+
+/* ========================================
+   DESKTOP
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .site-footer__inner {
+        padding-block:
+            var(--space-10);
+    }
+
+    .site-footer__socials a:not(.site-footer__social--disabled):hover {
+        color:
+            var(--color-black);
+
+        background:
+            var(--color-gold-light);
+
+        border-color:
+            var(--color-gold-light);
+
+        transform:
+            translateY(-2px);
+    }
+}

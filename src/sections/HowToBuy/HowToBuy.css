@@ -1,0 +1,338 @@
+.how-to-buy {
+    width: 100%;
+
+    padding:
+        var(--space-16) var(--page-padding) var(--space-20);
+
+    background:
+        var(--color-page);
+}
+
+.how-to-buy__inner {
+    width:
+        min(100%,
+            var(--page-max-width));
+
+    margin-inline: auto;
+}
+
+.how-to-buy__eyebrow {
+    font-size: 0.625rem;
+    font-weight:
+        var(--font-weight-semibold);
+
+    color:
+        var(--color-gold-dark);
+
+    letter-spacing: 0.2em;
+}
+
+.how-to-buy__title {
+    margin-top:
+        var(--space-4);
+
+    font-size:
+        clamp(3.9rem,
+            17vw,
+            6rem);
+
+    font-weight: 400;
+    line-height: 0.8;
+
+    color:
+        var(--color-black);
+
+    letter-spacing: -0.045em;
+}
+
+.how-to-buy__title span {
+    display: block;
+
+    font-style: italic;
+
+    color:
+        var(--color-gold-dark);
+}
+
+.how-to-buy__steps {
+    margin-top:
+        var(--space-12);
+
+    border-top:
+        1px solid var(--color-border);
+}
+
+.how-to-buy__step {
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr);
+
+    gap:
+        var(--space-5);
+
+    padding-block:
+        var(--space-6);
+
+    border-bottom:
+        1px solid var(--color-border);
+}
+
+.how-to-buy__number {
+    padding-top: 0.15rem;
+
+    font-family:
+        var(--font-family-display);
+
+    font-size:
+        var(--font-size-lg);
+
+    color:
+        var(--color-gold-dark);
+}
+
+.how-to-buy__step-copy h3 {
+    font-size:
+        clamp(1.8rem,
+            7vw,
+            2.5rem);
+
+    font-weight: 500;
+    line-height: 1;
+
+    color:
+        var(--color-black);
+}
+
+.how-to-buy__step-copy p {
+    max-width: 34rem;
+
+    margin-top:
+        var(--space-3);
+
+    font-size:
+        var(--font-size-sm);
+
+    line-height: 1.7;
+
+    color:
+        var(--color-text-muted);
+}
+
+.how-to-buy__cta {
+    display: flex;
+    flex-direction: column;
+
+    gap:
+        var(--space-8);
+
+    margin-top:
+        var(--space-12);
+
+    padding:
+        var(--space-8) var(--space-6);
+
+    color:
+        var(--color-white);
+
+    background:
+        var(--color-black);
+}
+
+.how-to-buy__cta span {
+    display: block;
+
+    margin-bottom:
+        var(--space-4);
+
+    font-size: 0.625rem;
+    font-weight:
+        var(--font-weight-semibold);
+
+    color:
+        var(--color-gold-light);
+
+    letter-spacing: 0.18em;
+}
+
+.how-to-buy__cta strong {
+    display: block;
+
+    font-family:
+        var(--font-family-display);
+
+    font-size:
+        clamp(2.6rem,
+            11vw,
+            4.8rem);
+
+    font-weight: 400;
+    line-height: 0.88;
+
+    letter-spacing: -0.035em;
+
+    color:
+        var(--color-white);
+}
+
+.how-to-buy__cta a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 3.25rem;
+
+    padding:
+        var(--space-3) var(--space-5);
+
+    font-size: 0.625rem;
+    font-weight:
+        var(--font-weight-semibold);
+
+    color:
+        var(--color-black);
+
+    background:
+        var(--color-gold-light);
+
+    border:
+        1px solid var(--color-gold-light);
+
+    border-radius: 999px;
+
+    letter-spacing: 0.1em;
+
+    transition:
+        transform var(--duration-fast) var(--ease-standard),
+        background-color var(--duration-fast) var(--ease-standard),
+        border-color var(--duration-fast) var(--ease-standard);
+}
+
+@media (min-width: 768px) {
+    .how-to-buy {
+        padding-block:
+            var(--space-20) var(--space-24);
+    }
+
+    .how-to-buy__title {
+        font-size:
+            clamp(5.5rem,
+                12vw,
+                7rem);
+    }
+
+    .how-to-buy__steps {
+        margin-top:
+            var(--space-16);
+    }
+
+    .how-to-buy__step {
+        grid-template-columns:
+            5rem minmax(0, 1fr);
+
+        gap:
+            var(--space-8);
+
+        padding-block:
+            var(--space-8);
+    }
+
+    .how-to-buy__number {
+        font-size:
+            var(--font-size-xl);
+    }
+
+    .how-to-buy__step-copy h3 {
+        font-size:
+            clamp(2.2rem,
+                4vw,
+                3rem);
+    }
+
+    .how-to-buy__step-copy p {
+        font-size:
+            var(--font-size-base);
+    }
+
+    .how-to-buy__cta {
+        flex-direction: row;
+        align-items: end;
+        justify-content: space-between;
+
+        padding:
+            var(--space-10) var(--space-8);
+    }
+
+    .how-to-buy__cta a {
+        flex-shrink: 0;
+
+        width: auto;
+        min-width: 12rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .how-to-buy {
+        padding-block:
+            var(--space-24) var(--space-32);
+    }
+
+    .how-to-buy__title {
+        font-size:
+            clamp(6.5rem,
+                8vw,
+                9rem);
+    }
+
+    .how-to-buy__steps {
+        margin-top:
+            var(--space-20);
+    }
+
+    .how-to-buy__step {
+        grid-template-columns:
+            7rem minmax(0, 1fr);
+
+        padding-block:
+            var(--space-10);
+    }
+
+    .how-to-buy__step-copy {
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 0.8fr) minmax(0, 1.2fr);
+
+        align-items: start;
+
+        gap:
+            var(--space-12);
+    }
+
+    .how-to-buy__step-copy p {
+        margin-top: 0;
+
+        font-size:
+            var(--font-size-lg);
+    }
+
+    .how-to-buy__cta {
+        margin-top:
+            var(--space-16);
+
+        padding:
+            var(--space-12);
+    }
+
+    .how-to-buy__cta a:hover {
+        transform:
+            translateY(-2px);
+
+        background:
+            var(--color-white);
+
+        border-color:
+            var(--color-white);
+    }
+}

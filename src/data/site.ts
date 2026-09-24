@@ -8,8 +8,8 @@ export const siteConfig = {
     contractAddress: '',
 
     links: {
-        telegram: '',
-        x: '',
+        telegram: 'https://t.me/BALLININURH',
+        x: 'https://x.com/BallininuRH',
         buy: '',
         dexscreener: '',
     },
