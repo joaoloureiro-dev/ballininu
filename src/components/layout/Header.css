@@ -1,13 +1,14 @@
 .site-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 20;
+    position: relative;
+    z-index: 50;
 
     width: 100%;
 
     padding:
         var(--space-4) var(--page-padding);
+
+    background:
+        var(--color-page);
 }
 
 .site-header__inner {
@@ -15,9 +16,11 @@
     align-items: center;
     justify-content: space-between;
 
-    gap: var(--space-4);
+    gap: var(--space-3);
 
-    width: min(100%, var(--page-max-width));
+    width:
+        min(100%,
+            var(--page-max-width));
 
     margin-inline: auto;
 }
@@ -29,30 +32,33 @@
     gap: var(--space-3);
 
     min-width: 0;
-
-    text-decoration: none;
 }
 
 .site-header__logo {
-    width: 2.6rem;
-    height: 2.6rem;
+    flex-shrink: 0;
+
+    width: 2.75rem;
+    height: 2.75rem;
 
     object-fit: cover;
 
-    border-radius: 50%;
-
     border:
-        1px solid rgba(240, 202, 103, 0.5);
+        1px solid rgba(5, 5, 5, 0.14);
+
+    border-radius: 50%;
 }
 
-.site-header__brand span {
+.site-header__name {
     display: none;
 
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
+    font-size:
+        var(--font-size-xs);
 
-    color: var(--color-white);
+    font-weight:
+        var(--font-weight-semibold);
+
+    color:
+        var(--color-black);
 
     letter-spacing: 0.16em;
 }
@@ -66,41 +72,45 @@
     align-items: center;
     justify-content: center;
 
-    min-height: 2.6rem;
+    min-height: 2.7rem;
 
-    padding:
-        var(--space-2) var(--space-5);
+    padding-inline:
+        var(--space-5);
 
-    font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-semibold);
+    font-size: 0.6875rem;
+    font-weight:
+        var(--font-weight-semibold);
 
-    color: var(--color-black);
-    background: var(--color-gold-light);
+    color:
+        var(--color-white);
+
+    background:
+        var(--color-black);
 
     border:
-        1px solid var(--color-gold-light);
+        1px solid var(--color-black);
 
     border-radius: 999px;
 
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
 
     transition:
+        color var(--duration-fast) var(--ease-standard),
         background-color var(--duration-fast) var(--ease-standard),
         border-color var(--duration-fast) var(--ease-standard);
 }
 
-.site-header__cta:hover {
-    background: var(--color-white);
-
-    border-color: var(--color-white);
-}
+/* ========================================
+   TABLET
+   ======================================== */
 
 @media (min-width: 768px) {
     .site-header {
-        padding-top: var(--space-5);
+        padding-block:
+            var(--space-5);
     }
 
-    .site-header__brand span {
+    .site-header__name {
         display: inline;
     }
 
@@ -108,34 +118,57 @@
         display: flex;
         align-items: center;
 
-        gap: var(--space-6);
+        gap: var(--space-5);
     }
 
     .site-header__nav a {
         position: relative;
 
-        font-size: var(--font-size-xs);
-        font-weight: var(--font-weight-medium);
+        font-size: 0.6875rem;
+        font-weight:
+            var(--font-weight-medium);
 
-        color: rgba(255, 255, 255, 0.74);
+        color:
+            rgba(5, 5, 5, 0.58);
 
-        letter-spacing: 0.12em;
+        letter-spacing: 0.1em;
 
         transition:
             color var(--duration-fast) var(--ease-standard);
     }
 
     .site-header__nav a:hover {
-        color: var(--color-white);
+        color:
+            var(--color-black);
+    }
+
+    .site-header__cta:hover {
+        color:
+            var(--color-black);
+
+        background:
+            var(--color-gold-light);
+
+        border-color:
+            var(--color-gold-light);
     }
 }
 
+/* ========================================
+   DESKTOP
+   ======================================== */
+
 @media (min-width: 1024px) {
-    .site-header {
-        padding-top: var(--space-6);
+    .site-header__logo {
+        width: 3rem;
+        height: 3rem;
     }
 
     .site-header__nav {
         gap: var(--space-8);
+    }
+
+    .site-header__cta {
+        min-width: 5.5rem;
     }
 }

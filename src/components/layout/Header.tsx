@@ -5,6 +5,9 @@ import { siteConfig } from '../../data/site'
 import './Header.css'
 
 function Header() {
+    const buyHref =
+        siteConfig.links.buy || '#token'
+
     return (
         <header className="site-header">
             <div className="site-header__inner">
@@ -16,10 +19,10 @@ function Header() {
                     <img
                         className="site-header__logo"
                         src="/images/ballininu-logo.png"
-                        alt="BALLININU"
+                        alt=""
                     />
 
-                    <span>
+                    <span className="site-header__name">
                         BALLININU
                     </span>
                 </a>
@@ -47,14 +50,19 @@ function Header() {
 
                 <motion.a
                     className="site-header__cta"
-                    href={siteConfig.links.buy || '#token'}
-                    target={siteConfig.links.buy ? '_blank' : undefined}
-                    rel={siteConfig.links.buy ? 'noopener noreferrer' : undefined}
-                    whileHover={{
-                        y: -2,
-                    }}
+                    href={buyHref}
+                    target={
+                        siteConfig.links.buy
+                            ? '_blank'
+                            : undefined
+                    }
+                    rel={
+                        siteConfig.links.buy
+                            ? 'noopener noreferrer'
+                            : undefined
+                    }
                     whileTap={{
-                        y: 0,
+                        scale: 0.97,
                     }}
                 >
                     BUY
