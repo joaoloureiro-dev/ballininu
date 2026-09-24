@@ -3,6 +3,7 @@ import MarketTicker from './components/ui/MarketTicker'
 
 import Hero from './sections/Hero/Hero'
 import About from './sections/About/About'
+import Token from './sections/Token/Token'
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
 
       <main>
         <Hero />
-
         <About />
+        <Token />
       </main>
     </>
   )
